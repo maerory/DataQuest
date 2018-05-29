@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Read the file in chunks and calculate the memory usage of each chunks in megabyte
 # then plot it on a histogram
-chunk_iter = pd.read_csv("moma.csv", chunksize=250
+chunk_iter = pd.read_csv("moma.csv", chunksize=250)
 memory_footprints = [chunk.memory_usage(deep=True).sum() / 1048576 for chunk in chunk_iter]
 plt.hist(memory_footprints)
 plt.show()
